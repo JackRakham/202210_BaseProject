@@ -1,0 +1,34 @@
+<div class="container-fluid">
+  <div class="row">
+  <div class="col-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="h4">Id</th>
+          <th class="h4">Name</th>
+          <th class="h4">Country</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr id = "23" *ngFor="let c of Maravillaslist">
+          <td >
+            <dd>{{c.id}}</dd>
+          </td>
+          <td class="clickable" (click)="clickMaravilla(c)">
+            <dd><a href="#23">{{c.name}}</a></dd>
+          </td>
+          <td>
+            <dd>{{c.country}}</dd>
+          </td>
+      </tr>
+      <tr>
+        <label id="total" class="etiqueta"></label>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-3">
+    <app-DetalleMaravillas *ngIf="active_link=='detalle-maravilla'" [Maravilla]="maravillaActual"></app-DetalleMaravillas>
+  </div>
+</div>
